@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="container-fluid" id="header">
+
+
+    <!-- JUMBOTRON -->
+    <div class="jumbotron jumbotron-fluid carousel slide mb-0" id="jumbotron" data-ride="carousel" data-interval="6000"
+      data-pause="false">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-sm navbar-light" id="navbar">
+        <a class="navbar-brand" href="#">ALLEZ<span class="whitespan">CINE!</span></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse row" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-flex col-sm-6">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Genre</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId" id="navDropdown">
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#" id="navbarcontact">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 col-sm-6" id="navbarsearch">
+            <input class="form-control search_input col-8" type="text" placeholder="Search...">
+            <a href="#" class="search_icon col-4"><i class="fa fa-search" aria-hidden="true"></i></a>
+          </form>
+        </div>
+      </nav>
+      <ol class="carousel-indicators">
+      </ol>
+      <div class="carousel-inner" id="carouselInner">
+
+      </div>
+    </div>
+
+    <!-- Modal Login-->
+    <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content form-elegant">
+          <!--Header-->
+          <div class="modal-header text-center">
+            <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                in</strong></h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mx-4">
+            <!--Body-->
+            <div class="md-form mb-5">
+              <input type="email" id="Form-email1" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
+            </div>
+
+            <div class="md-form pb-3">
+              <input type="password" id="Form-pass1" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
+              <div class="form-group mt-4">
+                <input class="form-check-input" type="checkbox" id="checkbox624">
+                <label for="checkbox624" class="white-text form-check-label">Stay connected</label>
+              </div>
+              <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#"
+                  class="blue-text ml-1">Password?</a></p>
+            </div>
+
+            <div class="text-center mb-3">
+              <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign in</button>
+            </div>
+            <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:
+            </p>
+
+            <div class="row my-3 d-flex justify-content-center">
+              <!--Facebook-->
+              <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fa fa-facebook"
+                  aria-hidden="true"></i></button>
+              <!--Twitter-->
+              <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fa fa-twitter"
+                  aria-hidden="true"></i></button>
+              <!--Google +-->
+              <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fa fa-google-plus"
+                  aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#sign_up"
+                class="blue-text ml-1">Register</a></p>
+            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <script>
+      $('a[href="#sign_up"]').click(function () {
+        $('#LoginForm').modal('hide');
+        $('#RegisterForm').modal('show');
+      })
+    </script>
+    <!-- Modal -->
+
+    <!-- Modal Register-->
+    <div class="modal fade" id="RegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content form-elegant">
+          <!--Header-->
+          <div class="modal-header text-center">
+            <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel">
+              <strong>Register</strong></h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mx-4">
+            <!--Body-->
+            <div class="md-form mb-5">
+              <input type="email" id="Form-email2" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-email2">Your email</label>
+            </div>
+
+            <div class="md-form pb-3">
+              <input type="password" id="Form-pass2" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-pass2">Your password</label>
+              <input type="password" id="Form-pass3" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-pass3">Confirm password</label>
+              <div class="form-group mt-4">
+                <input class="form-check-input" type="checkbox" id="checkbox624">
+                <label for="checkbox624" class="white-text form-check-label">Accept the <a href="#"
+                    class="green-text font-weight-bold">Terms and Conditions</a></label>
+              </div>
+            </div>
+
+            <div class="text-center mb-3">
+              <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Register</button>
+            </div>
+            <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Register with:
+            </p>
+
+            <div class="row my-3 d-flex justify-content-center">
+              <!--Facebook-->
+              <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fa fa-facebook"
+                  aria-hidden="true"></i></button>
+              <!--Twitter-->
+              <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fa fa-twitter"
+                  aria-hidden="true"></i></button>
+              <!--Google +-->
+              <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fa fa-google-plus"
+                  aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-end">Have an account? <a href="#sign_in"
+                class="blue-text ml-1">Sign In</a></p>
+            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <script>
+      $('a[href="#sign_in"]').click(function () {
+        $('#RegisterForm').modal('hide');
+        $('#LoginForm').modal('show');
+      })
+    </script>
+    <!-- Modal -->
+
+    <!-- BOTTOM NAVBAR -->
+    <nav class="navbar navbar-expand navbar-light" id="jumbobottomnavbar">
+      <div class="nav navbar-nav">
+        <p id="phoneNumber"><i class="fa fa-phone" aria-hidden="true"></i>+3248252456</p>
+        <a class="btn btn-dark ml-2" data-toggle="modal" data-target="#LoginForm" href="#">Login</a>
+        <a class="btn btn-dark ml-2" data-toggle="modal" data-target="#RegisterForm" href="#">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="sidebar">
+    <div class="envelope">
+      <a href="https://www.twitter.com" target="_blank" class="social twitter" name="linkTwitter">
+        <p>Twitter</p>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="envelope">
+      <a href="https://www.facebook.com" target="_blank" class="social facebook" name="linkFacebook">
+        <p>Facebook</p>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="envelope">
+      <a href="https://www.youtube.com" target="_blank" class="social youtube" name="linkYoutube">
+        <p>Youtube</p>
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="envelope">
+      <a href="https://www.plus.google.com" target="_blank" class="social google" name="linkGoogle">
+        <p>Google</p>
+        <i class="fa fa-google-plus" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal Movie Details-->
+  <div class="modal fade" id="modalMovieDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <!--Content-->
+      <div class="modal-content form-elegant">
+        <!--Header-->
+        <div class="modal-header text-center">
+          <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong> Details
+            </strong></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body mx-4" id="momdalMovieDetailsBody"></div>
+        <!--Footer-->
+        <div class="modal-footer mx-5 pt-3 mb-1">
+          <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+
+
+  <!-- HIGHLITED MOVIES -->
+  <section class="container" id="highlightedMovies">
+    <div class="row border rounded justify-content-around mb-5" id="highlightedMoviesRow">
+    </div>
+  </section>
+
+
+  <!-- FEATURED MOVIES -->
+  <section class="container" id="featuredMovies">
+    <h3>FEATURED MOVIES</h3>
+    <div class="row border rounded justify-content-around" id="featuredMoviesRow">
+
+    </div>
+    <div id="moreless" class="btn-danger text-center">More</div>
+  </section>
+
+  <!-- Section : Shop Movies -->
+  <section class="container-fluid" id=shopMovies>
+    <h3>Shop Movies</h3>
+    <div class="row">
+      <div class="row col-8 col-md-8 col-lg-8 col-sm-12 col-xs-12" id="underShopMovies">
+
+      </div>
+      <div class="col-4" id="bigCardHide">
+        <!-- Modal -->
+
+        <div class="card" id="highlightCard">
+          <div class="card-body" id="theBigCard">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Button trigger modal -->
+  <section class="container">
+    <div class="row">
+      <h3 class="col-12">Contact Us</h3>
+    </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modelId">Contact Us</button>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content form-elegant">
+
+        <!-- modal body -->
+
+        <div class="modal-body mx-4">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <input class="col m-1 rounded" type="firstname" placeholder="First Name">
+              <input class="col m-1 rounded" type="lastname" placeholder="Last Name">
+            </div>
+            <div class="row justify-content-center">
+              <input class="col m-1 rounded" type="email" placeholder="Email">
+              <input class="col m-1 rounded" type="subject" placeholder="Subject">
+            </div>
+            <div class="row justify-content-center">
+              <textarea class="col m-1 rounded" type="message" rows="4" placeholder="Your Message"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-start">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Send
+            Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- <script>
+    $('#exampleModal').on('show.bs.modal', event => {
+      var button = $(event.relatedTarget);
+      var modal = $(this);
+      // Use above variables to manipulate the DOM
+
+    });
+  </script> -->
+
+  <footer class="page-footer font-small red pt-4">
+    <div class="newsletter">
+      <section class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 d-flex justify-content-center">
+            <div class="col-sm-6 content ">
+              <h2 id="jonCena" class="text-uppercase d-flex justify-content-center">Subscribe to us</h2>
+              <div id="footerInputGroup" class="input-group">
+                <form name="email"></form><input type="email" class="form-control" placeholder="Enter your email..."></form>
+                <span class="input-group-btn">
+                  <button class="btn btn-danger text-uppercase" type="submit">Subscribe</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="yolo" class="container-fluid">
+        <div class="row">
+          <div class="col col1">
+            <h4 class="footerTitles">Release</h4>
+            <hr class="linebreak">
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-dark" href="#">2020</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">2019</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">2018</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">2017</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">2016</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">2015</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col col2">
+            <h4 class="footerTitles">Movies</h4>
+            <hr class="linebreak">
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-dark" href="#">Adventure</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">Comedy</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">Fantasy</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">Action</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">Movies</a>
+              </li>
+              <li>
+                <a class="text-dark" href="#">Horror</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col col3">
+            <h4 class="footerTitles">Review Movies</h4>
+            <hr class="linebreak">
+            <div id="footerButtons">
+              <button id="adv">Comedy</button>
+              <button>Horror</button>
+              <button>Historical</button>
+              <button>Romantic</button>
+              <button>Love</button>
+              <button>Action</button>
+              <button>Reviews</button>
+              <button>Comedy</button>
+            </div>
+          </div>
+          <div class="col col4">
+            <h4 class="footerTitles">Latest Movies</h4>
+            <hr class="linebreak">
+            <div id="latestMovies" class="container">
+
+            </div>
+          </div>
+          <div class="col col5">
+            <h4 class="footerTitles" id="hanSolo"><span id="ginger">Allez</span>Cine!</h4>
+            <hr class="linebreak">
+            <div class="container">
+              <div class="row" id="allezCine" style="width:15rem;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <h3>Connect Us</h3>
+        </div>
+      </div>
+      <div class="" id="footerFun">
+        <a class="" href="https://twitter.com/?lang=en" target="_blank">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a class="" href="https://www.facebook.com" target="_blank">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a class="" href="https://www.linkedin.com/" target="_blank">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="" href="https://www.youtube.com/" target="_blank">
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+        </a>
+        <a class="" href="https://www.blank.org/" target="_blank">
+          <i class=" fa fa-google-plus" aria-hidden="true"></i>
+        </a>
+        <!-- <button onclick="topFunction()" id="myBtn" title="Go Up">
+          <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+        </button> -->
+      </div>
+
+    </section>
+
+    </div>
+
+
+    <!-- Movie categories -->
+
+    <!-- Connect to Us -->
+
+
+  </footer>
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/index.js"></script>
+
+</body>
+
+</html>
